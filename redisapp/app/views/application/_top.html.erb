@@ -1,0 +1,13 @@
+<h2>Top 10</h2>
+<ol>
+	<% Letter.top_10.each do |letter| %>
+ 		<li>
+ 			<%=letter.name %>
+ 			<small><%=letter.score %> </small>
+
+ 			<%=link_to raw("&uarr;"),upvote_letter_path(letter),method: :patch %>
+ 			<%=link_to raw("&darr;"),downvote_letter_path(letter),method: :patch %>
+ 		</li>
+ 		<% end %>
+</ol>
+
